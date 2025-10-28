@@ -103,7 +103,6 @@ async function addCharacter() {
     const nameInput = document.getElementById('CharacterName');
     const roleInput = document.getElementById('CharacterRole');
     const addBtn = document.getElementById('addBtn');
-
     const character = {
         name: nameInput.value,
         role: roleInput.value,
