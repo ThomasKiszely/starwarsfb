@@ -217,3 +217,17 @@ input[type="text"]:focus {
 .skip-intro:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
+.back {
+    color: #ffe81f;
+    font-family: 'Oswald', sans-serif;
+}
+#back-btn {
+    color: #ffe81f;
+    border: 1px solid #ffe81f;
+    font-family: 'Oswald', sans-serif;
+}
+#index-link {
+    color: #ffe81f;
+    font-family: 'Oswald', sans-serif;
+}

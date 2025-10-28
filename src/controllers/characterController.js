@@ -51,10 +51,10 @@ async function downloadCharacter(req, res, next) {
         res.setHeader('Content-Disposition', `attachment; filename=StarWars-${id}.txt`);
         res.setHeader('Content-Type', 'text/plain');
         res.send(downloadCharacter);
-    } catch (err) {
+    } catch (error) {
         console.error('Download error:', err);
         res.status(500).json({ error: 'Could not generate file' });
-        next(err);
+        next(error);
     }
         res.status(200).json(downloadCharacter);
 }
