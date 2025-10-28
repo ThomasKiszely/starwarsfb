@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet"> <!-- Din custom CSS her -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Starwars characters</title>
+</head>
+<body>
+
+<h1>Starwars characters</h1>
+
+<div class="crawl-container">
+    <div class="crawl">
+        <p class="intro">A long time ago in a galaxy far, far away...</p>
+        <div class="text">
+            <p>Episode IV</p>
+            <p>A NEW HOPE</p>
+            <p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire...</p>
+        </div>
+    </div>
+    <button id="skipIntroBtn" class="skip-intro">Skip intro</button>
+
+</div>
+
+
+<ul id="list"></ul>
+
+<form class="d-flex gap-2"> <!-- Tilføjet form og flex for input + button -->
+    <input id="CharacterName" class="form-control flex-grow-1" type="text" placeholder="Indtast ny navn"> <!-- Tilføjet form-control og placeholder -->
+    <input id ="CharacterRole" class="form-control flex-grow-1" type="text" placeholder="Indtast ny role">
+    <button id="addBtn" class="btn btn-primary" type="button">Add</button>
+
+</form>
+<div class="stars"></div>
+
+<script src="./script.js"></script>
+</body>
+</html>
