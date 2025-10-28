@@ -5,4 +5,4 @@ collection: characters
 
 
 ***VIGTIGT***
-Husk at se intro'en!!!
+Husk at se intro'en!!! GÅR 5 SEK FØR DEN STARTER NÅR MAN ER PÅ SIDEN
