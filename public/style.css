@@ -152,6 +152,7 @@ input[type="text"]:focus {
     perspective: 400px;
     background: black;
     z-index: 10;
+
 }
 
 /* Crawl animation */
@@ -165,10 +166,12 @@ input[type="text"]:focus {
     color: #ffe81f;
     text-align: center;
     transform-origin: 50% 100%;
-    transform: rotateX(25deg);
+    transform: translateX(-50%) rotateX(25deg);
     animation: crawl 5s linear forwards;
     animation-delay: 0s;
     will-change: transform, bottom;
+    left: 50%;
+
 }
 
 
