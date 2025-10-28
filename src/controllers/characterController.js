@@ -47,16 +47,14 @@ async function deleteCharacterController(req, res, next){
 async function downloadCharacter(req, res, next) {
     try {
         const id = req.params.id;
-        const downloadCharacter = await downloadCharacterService(id);
+        const characterText = await downloadCharacterService(id);
         res.setHeader('Content-Disposition', `attachment; filename=StarWars-${id}.txt`);
         res.setHeader('Content-Type', 'text/plain');
-        res.send(downloadCharacter);
+        res.send(characterText);
     } catch (error) {
-        console.error('Download error:', err);
-        res.status(500).json({ error: 'Could not generate file' });
+        console.error('Fejl i oprettelse af character-fil: ' + error.message);
         next(error);
     }
-        res.status(200).json(downloadCharacter);
 }
 
 module.exports = {
