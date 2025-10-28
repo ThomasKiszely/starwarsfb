@@ -309,3 +309,19 @@
 28.10.2025, 14.15.22: Anmodning: GET /style.css -
 28.10.2025, 14.16.01: Anmodning: GET /500 -
 28.10.2025, 14.16.01: Anmodning: GET /style.css -
+28.10.2025, 14.17.20: Anmodning: GET / -
+28.10.2025, 14.17.20: Anmodning: GET /style.css -
+28.10.2025, 14.17.20: Anmodning: GET /script.js -
+28.10.2025, 14.17.20: Anmodning: GET /api/characters -
+28.10.2025, 14.17.29: Anmodning: GET /hdhdhd -
+28.10.2025, 14.17.29: Anmodning: GET /style.css -
+28.10.2025, 14.17.41: Anmodning: GET / -
+28.10.2025, 14.17.41: Anmodning: GET /style.css -
+28.10.2025, 14.17.41: Anmodning: GET /script.js -
+28.10.2025, 14.17.41: Anmodning: GET /api/characters -
+28.10.2025, 14.18.04: Anmodning: GET / -
+28.10.2025, 14.18.04: Anmodning: GET /style.css -
+28.10.2025, 14.18.04: Anmodning: GET /script.js -
+28.10.2025, 14.18.04: Anmodning: GET /api/characters -
+28.10.2025, 14.19.04: Anmodning: PUT /api/characters/6900bc49f4f0d34d91154e82 {"name":"Darth Maul","role":"Sith"}
+28.10.2025, 14.19.04: Anmodning: GET /api/characters -
