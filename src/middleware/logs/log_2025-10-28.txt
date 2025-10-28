@@ -228,3 +228,11 @@
 28.10.2025, 13.34.43: Anmodning: GET /style.css -
 28.10.2025, 13.34.43: Anmodning: GET /script.js -
 28.10.2025, 13.34.43: Anmodning: GET /api/characters -
+28.10.2025, 13.38.25: Anmodning: GET / -
+28.10.2025, 13.38.25: Anmodning: GET /style.css -
+28.10.2025, 13.38.25: Anmodning: GET /script.js -
+28.10.2025, 13.38.25: Anmodning: GET /api/characters -
+28.10.2025, 13.41.48: Anmodning: GET / -
+28.10.2025, 13.41.48: Anmodning: GET /style.css -
+28.10.2025, 13.41.48: Anmodning: GET /script.js -
+28.10.2025, 13.41.48: Anmodning: GET /api/characters -
