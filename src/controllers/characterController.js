@@ -1,9 +1,8 @@
-const { createCharacterService, getAllCharactersService, removeCharacterService, updateCharacterService, downloadCharacterService } = require('../service/characterService')
+const { createCharacterService, getAllCharactersService, removeCharacterService, updateCharacterService, downloadCharacterService } = require('../services/characterService')
 
 async function getAllCharactersController(req, res, next) {
     try {
         const characters = await getAllCharactersService();
-        console.log(characters);
         return res.status(200).json(characters);
     } catch (error) {
         console.log('Fejl i controller ved hentning af figurer');
@@ -47,8 +46,8 @@ async function deleteCharacterController(req, res, next){
 async function downloadCharacter(req, res, next) {
     try {
         const id = req.params.id;
-        const characterText = await downloadCharacterService(id);
-        res.setHeader('Content-Disposition', `attachment; filename=StarWars-${id}.txt`);
+        const { characterName, characterText } = await downloadCharacterService(id);
+        res.setHeader('Content-Disposition', `attachment; filename=StarWars-${characterName}.txt`);
         res.setHeader('Content-Type', 'text/plain');
         res.send(characterText);
     } catch (error) {

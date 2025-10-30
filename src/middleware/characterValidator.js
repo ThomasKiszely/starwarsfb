@@ -1,3 +1,5 @@
+const  allowedTypes  = require('../utils/constants');
+
 function validateCharacter(req, res, next) {
     const { name, role } = req.body;
     const errors = [];
@@ -5,8 +7,7 @@ function validateCharacter(req, res, next) {
     if (typeof name !== 'string' || name.trim().length < 3) {
         errors.push('Name should be at least 3 characters long.');
     }
-    const allowedRoles = ['Jedi', 'Sith', 'Rebel', 'Smuggler'];
-    if (typeof role !== 'string' || !allowedRoles.includes(role)) {
+    if (typeof role !== 'string' || !allowedTypes.includes(role)) {
         errors.push('Role must be one of: Jedi, Sith, Rebel or Smuggler.');
     }
 

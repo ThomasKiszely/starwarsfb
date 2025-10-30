@@ -7,6 +7,7 @@ async function createCharacter(characterData) {
         return await newCharacter.save();
     } catch (error) {
         console.log('Fejl i repo ved oprettelse' + error.message);
+        throw error;
     }
 }
 async function deleteCharacter(id) {
@@ -15,6 +16,7 @@ async function deleteCharacter(id) {
         return deleteCharacter;
     } catch (error) {
         console.log('Fejl ved slet i repo');
+        throw error;
     }
 }
 async function allCharacter() {
@@ -22,6 +24,7 @@ async function allCharacter() {
         return Character.find({});
     } catch (error) {
         console.log('Fejl i repo ved læsning af alle character');
+        throw error;
     }
 }
 async function updateCharacter(id, characterData) {
@@ -30,6 +33,7 @@ async function updateCharacter(id, characterData) {
         return updatedCharacter;
     } catch (error) {
         console.log('Fejl i repo ved update af character');
+        throw error;
     }
 }
 async function getCharacterById(id) {

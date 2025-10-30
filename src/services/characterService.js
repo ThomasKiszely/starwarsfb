@@ -1,5 +1,5 @@
 const { createCharacter, deleteCharacter, allCharacter, updateCharacter, getCharacterById}  = require("../data/characterRepo.js");
-const {formatSWText} = require("../utils/swTextFormatter");
+const {formatSWText } = require("../utils/swTextFormatter");
 
 
 
@@ -17,6 +17,8 @@ async function updateCharacterService(id, character) {
 }
 async function downloadCharacterService(id) {
     const character = await getCharacterById(id);
-    return formatSWText(character);
+    const name = character.name;
+    const formatted = formatSWText(character);
+    return {characterName: name, characterText: formatted};
 }
 module.exports = {createCharacterService, getAllCharactersService, removeCharacterService, updateCharacterService, downloadCharacterService};

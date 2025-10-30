@@ -42,9 +42,13 @@ document.getElementById('skipIntroBtn').addEventListener('click', () => {
 
 
 async function loadTask() {
-    const res = await fetch('/api/characters');
-    const items = await res.json();
-    render(items);
+    try {
+        const res = await fetch('/api/characters');
+        const items = await res.json();
+        render(items);
+    } catch (error) {
+        alert('Fejl ved hentning af characters: ' + error.message);
+    }
 }
 
 function render(items) {
@@ -109,17 +113,24 @@ async function addCharacter() {
     };
     let res;
     if (editingId) {
-        res = await fetch(`/api/characters/${editingId}`, {
-            method: 'PUT',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(character),
-        });
+        try {
+            res = await fetch(`/api/characters/${editingId}`, {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(character),
+            });
+        } catch (error) {
+            alert('Fejl ved redigering' + error.message);
+        }
     } else {
+        try {
         res = await fetch(`/api/characters`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(character),
         });
+    } catch (error) {
+        alert('Fejl ved redigering' + error.message);}
     }
 
     const result = await res.json().catch(() => ({}));
@@ -139,10 +150,15 @@ async function addCharacter() {
     await loadTask();
 }
 async function deleteCharacter(id) {
-    const res = await fetch(`/api/characters/${id}`, {method: 'DELETE'});
-        if(!res.ok) {
-            const err = await res.json().catch(() => {});
+    try {
+        const res = await fetch(`/api/characters/${id}`, {method: 'DELETE'});
+        if (!res.ok) {
+            const err = await res.json().catch(() => {
+            });
             alert('Kan ikke slette character ' + (err.error || res.status));
+        }
+    } catch (error) {
+        alert('Fejl ved sletning' + error.message);
     }
         await loadTask();
 }

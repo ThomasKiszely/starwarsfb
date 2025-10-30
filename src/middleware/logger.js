@@ -1,20 +1,22 @@
 const EventEmitter = require('events');
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
 const logger = new EventEmitter();
 
-logger.on('log', (message) => {
-    const timestamp = new Date().toLocaleString('da-DK');
-    const logMessage = `${timestamp}: Anmodning: ${message}\n`;
+logger.on('log', async(message) => {
+    try {
+        const timestamp = new Date().toLocaleString('da-DK');
+        const logMessage = `${timestamp}: Anmodning: ${message}\n`;
 
-    const logDir = path.join(__dirname, 'logs');
-    if (!fs.existsSync(logDir)) {
-        fs.mkdirSync(logDir);
+        const logDir = path.join(__dirname, 'logs');
+        const date = new Date();
+        const dateString = date.toISOString().split('T')[0]; // "2025-10-22"
+        const logFile = path.join(logDir, `log_${dateString}.txt`);
+        await fs.mkdir(logDir, {recursive: true});
+        await fs.appendFile(logFile, logMessage);
+    } catch (error){
+        console.error('Fejl ved logning: ' + error.message);
     }
-    const date = new Date();
-    const dateString = date.toISOString().split('T')[0]; // "2025-10-22"
-    const logFile = path.join(logDir, `log_${dateString}.txt`);
-    fs.appendFileSync(logFile, logMessage);
 });
 
 const log = (req, res, next) => {

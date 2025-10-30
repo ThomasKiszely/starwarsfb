@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const router = require('./routes/characterRoutes');
-const { log, notFound, errorHandler } = require('../src/middleware/middlewares');
-const { connectToDatabase } = require('./service/db');
+const { log, notFound, errorHandler } = require('./middleware/middlewares');
+const { connectToDatabase } = require('./services/db');
 connectToDatabase();
 
 
